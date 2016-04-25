@@ -18,3 +18,15 @@
 MODULE_LICENSE("Dual BSD/GPL");
 MODULE_AUTHOR("Zhexuan Yang");
 
+/*declare function prototype*/
+
+int open_device(struct inode *inode, struct file *fd);
+int close_device(struct inode *inode, struct file *fd);
+ssize_t read_from_device(struct file *fd, char *temp_buffer, size_t bytes_read, loff_t *offset);
+ssize_t write_to_device(struct file *fd, const char __user *temp_buffer, size_t count,
+                        loff_t *f_pos);
+int initialize_device(void);
+void destruct_device(void);
+
+
+
