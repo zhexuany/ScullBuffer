@@ -14,7 +14,7 @@ int main(int argc, char **argv){
   }
 
   if((fd = open("/dev/scullbuffer", O_RDONLY)) == -1){
-    perror("Cannot open scullbuffer for writing\n");
+    perror("CONSUMER: Cannot open scullbuffer for writing\n");
     return 0;
   }
 
@@ -23,11 +23,11 @@ int main(int argc, char **argv){
   num_items = atoi(argv[1]);
   for(i = 0; i < num_items; i++){
     if(read(fd, product, ITEM_SIZE) == 0){
-      printf("Nothing to read\n");
+      printf("CONSUMER: Nothing to read\n");
       return 0;
     }
     else
-      printf("Reading item %s\n", product);
+      printf("CONSUMER: Reading item %s\n", product);
     usleep(100000); //sleep for 100ms
   }
   close(fd);

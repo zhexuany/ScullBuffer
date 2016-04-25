@@ -1,5 +1,5 @@
 #!/bin/bash
 
-./producer 50 &
+./producer 50 GREEN&
 sleep 0.1
 ./consumer 50 &

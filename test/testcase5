@@ -1,6 +1,6 @@
 #!/bin/bash
 
-./producer 50 &
-./consumer 25 &
+./producer 50 RED&
+./consumer 25 BLUE&
 sleep 0.1
 ./consumer 25 &
