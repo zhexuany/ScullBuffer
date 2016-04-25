@@ -13,8 +13,8 @@ EXTRA_CFLAGS += -I$(LDDINC)
 
 ifneq ($(KERNELRELEASE),)
 # call from kernel build system
-
-obj-m	:= driver.o
+cull-objs := driver.o scullbuffer.o
+obj-m	:= scull.o
 
 else
 
