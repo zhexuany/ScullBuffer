@@ -1,3 +1,11 @@
+/**
+ *
+ * This is a simple character buffer that allows for concurrnet reads and writes.
+ *
+ * Most of the code is reused from scullpipe.  Alterations were made to convert
+ * from a pipe to a buffer.
+ *
+ **/
 #include <linux/sched.h>
 #include <linux/module.h>
 #include <linux/moduleparam.h>
@@ -251,3 +259,4 @@ void scull_buffer_cleanup(void)
 	unregister_chrdev_region(scull_buffer_devno, 1);
 	scull_buffer_device = NULL; /* pedantic */
 }
+

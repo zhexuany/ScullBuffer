@@ -48,8 +48,8 @@
 #define SCULL_NR_DEVS 4    /* scull0 through scull3 */
 #endif
 
-#ifndef SCULL_B_NR_DEVS
-#define SCULL_B_NR_DEVS 4  /* scullbuffer0 through scullbuffer3 */
+#ifndef SCULL_P_NR_DEVS
+#define SCULL_P_NR_DEVS 1  /* scullpipe0 through scullpipe3 */
 #endif
 
 /*
@@ -70,10 +70,10 @@
 #endif
 
 /*
- * The buffer device is a simple circular buffer. Here its default size
+ * The pipe device is a simple circular buffer. Here its default size
  */
-#ifndef SCULL_B_BUFFER
-#define SCULL_B_BUFFER 50
+#ifndef SCULL_P_BUFFER
+#define SCULL_P_BUFFER 4000
 #endif
 
 /*
@@ -108,14 +108,14 @@ extern int scull_nr_devs;
 extern int scull_quantum;
 extern int scull_qset;
 
-extern int scull_buffer_size;	/* scullbuffer.c */
+extern int scull_p_buffer;	/* pipe.c */
 
 /*
  * Prototypes for shared functions
  */
 
-int     scull_b_init(dev_t dev);
-void    scull_b_cleanup(void);
+int     scull_buffer_init(dev_t dev);
+void    scull_buffer_cleanup(void);
 int     scull_access_init(dev_t dev);
 void    scull_access_cleanup(void);
 
@@ -164,9 +164,9 @@ int     scull_ioctl(struct inode *inode, struct file *filp,
  * not printed in the book, and there's no need to have all six.
  * (The previous stuff was only there to show different ways to do it.
  */
-#define SCULL_B_IOCTSIZE _IO(SCULL_IOC_MAGIC,   13)
-#define SCULL_B_IOCQSIZE _IO(SCULL_IOC_MAGIC,   14)
-/* ... more tocome */
+#define SCULL_P_IOCTSIZE _IO(SCULL_IOC_MAGIC,   13)
+#define SCULL_P_IOCQSIZE _IO(SCULL_IOC_MAGIC,   14)
+/* ... more to come */
 
 #define SCULL_IOC_MAXNR 14
 

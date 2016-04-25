@@ -13,7 +13,9 @@ EXTRA_CFLAGS += -I$(LDDINC)
 
 ifneq ($(KERNELRELEASE),)
 # call from kernel build system
-cull-objs := driver.o scullbuffer.o
+
+scull-objs := driver.o scullbuffer.o
+
 obj-m	:= scull.o
 
 else
@@ -26,7 +28,7 @@ modules:
 endif
 
 clean:
-	rm -rf *.o *~ core .depend .*.cmd *.ko *.mod.c .tmp_versions
+	rm -rf *.o *~ core .depend .*.cmd *.ko *.mod.c .tmp_versions producer consumer
 
 depend .depend dep:
 	$(CC) $(CFLAGS) -M *.c > .depend
