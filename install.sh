@@ -1,4 +1,8 @@
+echo "compiling character driver"
 make
-sudo ./scull_unload
+echo "starting to unload scullbuffer driver"
+sudo ./scull_unload || true
+
+echo "starting to load scullbuffer driver"
 sudo ./scull_load
 
