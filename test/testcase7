@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cho ""
+echo ""
 echo ""
 echo "***************************"
 echo "*   Running test case 7   *"
@@ -8,9 +8,9 @@ echo "*-------------------------*"
 echo "* 2 Producers : 50 items  *"
 echo "* 1 Consumer  : 100 items *"
 echo "***************************"
-./producer 50 BLACK&
-./producer 50 WHITE&
+./producer 50 BLACK  > PRODUCER_TEST_7_BLACK
+./producer 50 WHITE > PRODUCER_TEST_7_WHITE
 sleep 0.1
-./consumer 200 &
+./consumer 200 > CONSUMER_TEST_7
 # clear buffer
 cat /dev/scullbuffer > /dev/null

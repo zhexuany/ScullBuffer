@@ -13,13 +13,14 @@ Testing the functioning of scullbuffer  device:
 -------------------------------------------------
 
 To run all test cases:
-   sudo test/allTestCases
+  (cd test; ./allTestCases) 
 This will unload/load the module to ensure the tests run cleanly.
 
 To run tests individually:
   sudo ./scull_unload
   sudo ./scull_load
-  test/testcase[1-7]
+  cd test
+  ./testcase[1-7]
 
 To run the producers and consumers individually:
   ./producer <num_items_to_produce> <color>

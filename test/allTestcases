@@ -1,35 +1,42 @@
 #!/bin/bash
-
-#ensure buffer is empty
-sudo ../scull_unload
-sudo ../scull_load
+echo "compiling producer and consumer"
+make clean
+make
 
 sleep 2
 ./testcase1
-sleep 7
+wc *_TEST_1*
+sleep 10
 
 sleep 2
 ./testcase2
-sleep 7
+wc *_TEST_2*
+sleep 10
 
 sleep 2
 ./testcase3
+wc *_TEST_3*
 sleep 12
 
 sleep 2
 ./testcase4
+wc *_TEST_4*
 sleep 12
 
-sleep 2
 
 sleep 2
 ./testcase5
-sleep 7
+wc *_TEST_5*
+sleep 10
 
 sleep 2
 ./testcase6
-sleep 7
+wc *_TEST_6*
+sleep 10
 
 sleep 2
 ./testcase7
+wc *_TEST_7*
 sleep 12
+
+

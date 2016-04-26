@@ -9,9 +9,9 @@ echo "*-------------------------*"
 echo "* 1 Producer : 50  items  *"
 echo "* 1 Consumer : 100 items  *"
 echo "***************************"
-./producer 50 RED&
+./producer 50 RED > PRODUCER_TEST_3_RED
 sleep 0.1
-./consumer 100 &
+./consumer 100 > CONSUMER_TEST_3
 # clear buffer
 cat /dev/scullbuffer > /dev/null
 

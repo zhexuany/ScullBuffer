@@ -6,8 +6,7 @@
 
 #define ITEM_SIZE 32
 
-int main(int argc, char **argv)
-{
+int main(int argc, char **argv){
   int fd;
   int num_items;
   int i;
